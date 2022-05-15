@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2022 a las 19:59:02
+-- Tiempo de generación: 15-05-2022 a las 21:33:59
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.3.31
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `data_sheet` (
+  `id` int(10) NOT NULL,
   `panel_number` varchar(50) NOT NULL,
   `job_number` varchar(50) NOT NULL,
   `job_name` varchar(50) NOT NULL,
@@ -43,6 +44,7 @@ CREATE TABLE `data_sheet` (
 --
 
 CREATE TABLE `serial_numbers` (
+  `id` int(10) NOT NULL,
   `serial_number` varchar(50) NOT NULL,
   `panel_number` varchar(50) NOT NULL,
   `meter_no` int(10) NOT NULL
@@ -56,13 +58,29 @@ CREATE TABLE `serial_numbers` (
 -- Indices de la tabla `data_sheet`
 --
 ALTER TABLE `data_sheet`
-  ADD PRIMARY KEY (`panel_number`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `serial_numbers`
 --
 ALTER TABLE `serial_numbers`
-  ADD PRIMARY KEY (`serial_number`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `data_sheet`
+--
+ALTER TABLE `data_sheet`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `serial_numbers`
+--
+ALTER TABLE `serial_numbers`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
